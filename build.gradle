@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+mainClassName='com.example.estester.Application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    implementation 'junit:junit:4.13.1'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
+
+    testImplementation "org.mockito:mockito-core:3.+"
+    implementation 'org.json:json:20210307'
+}
+
+test {
+    useJUnitPlatform()
+}
