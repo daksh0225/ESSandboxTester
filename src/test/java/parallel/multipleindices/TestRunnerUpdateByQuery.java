@@ -18,10 +18,10 @@ import static org.junit.Assert.assertTrue;
 public class TestRunnerUpdateByQuery {
     static StringBuilder emp50k;
     static StringBuilder emp100k;
-    private static String resource1 = "/Users/daksh0225/Employees50K.json";
-    private static String resource2 = "/Users/daksh0225/Employees100K.json";
+    private static String resource1 = "data/emp50.json";
+    private static String resource2 = "data/emp100.json";
 
-    @BeforeClass
+//    @BeforeClass
     public static void loadContent() {
         File file1 = new File(resource1);
         emp50k = new StringBuilder();

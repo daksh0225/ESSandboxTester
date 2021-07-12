@@ -18,13 +18,13 @@ import static parallel.multipleindices.TestRunnerUpdateByQuery.emp50k;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestClass5 {
-    private static StringBuilder content1 = emp50k;
-    private static StringBuilder content2 = emp100k;
-    private static String resource1 = "/Users/daksh0225/Employees50K.json";
-    private static String resource2 = "/Users/daksh0225/Employees100K.json";
+    private static StringBuilder content1;
+    private static StringBuilder content2;
+    private static String resource1 = "data/emp50.json";
+    private static String resource2 = "data/emp100.json";
     private static String sandboxId = null;
 
-//    @BeforeClass
+    @BeforeClass
     public static void loadContent() {
         File file1 = new File(resource1);
         content1 = new StringBuilder();
@@ -127,7 +127,7 @@ public class TestClass5 {
         String queryPayload = "{\n  \"track_total_hits\": true, \"query\":\n  {\n    \"match\": {\"MaritalStatus\": \"Married\"}\n  }\n}";
         int val = Application.searchIndex(index, queryPayload, sandboxId);
 //        System.out.println("1: " + val);
-        assertEquals(75054, val);
+        assertEquals(1029, val);
     }
 
     @Test
@@ -158,6 +158,6 @@ public class TestClass5 {
         String queryPayload = "{\n  \"track_total_hits\": true, \"query\":\n  {\n    \"match\": {\"MaritalStatus\": \"Married\"}\n  }\n}";
         int val = Application.searchIndex(index, queryPayload, sandboxId);
 //        System.out.println("1: " + val);
-        assertEquals(36084, val);
+        assertEquals(107, val);
     }
 }

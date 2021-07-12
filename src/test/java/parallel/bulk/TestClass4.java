@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestClass4 {
     private static StringBuilder content;
-    private static String resource = "/Users/daksh0225/Intern/Ex_Files_Elasticsearch_EssT/Exercise Files/data/accounts.json";
+    private static String resource = "data/accounts.json";
     private static String sandboxId = null;
 
     @BeforeClass

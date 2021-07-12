@@ -119,7 +119,7 @@ public class Application {
     public static int bulkRequest(int id, String payload, String sandboxId, String index){
         int code = 404;
         try {
-            URL siteURL = new URL("http://localhost:9200/"+index+(index == null ? "" : "/")+"_bulk?refresh");
+            URL siteURL = new URL("http://localhost:9200/"+(index == null ? "" : index+"/")+"_bulk?refresh");
             HttpURLConnection con = (HttpURLConnection) siteURL.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/x-ndjson");
