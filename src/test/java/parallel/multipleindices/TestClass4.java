@@ -20,11 +20,11 @@ import static parallel.multipleindices.TestRunnerUpdateByQuery.emp50k;
 public class TestClass4 {
     private static StringBuilder content1;
     private static StringBuilder content2;
-    private static String resource1 = "data/emp50.json";
-    private static String resource2 = "data/emp100.json";
+    private static String resource1 = "data/Employees50K.json";
+    private static String resource2 = "data/Employees100K.json";
     private static String sandboxId = null;
 
-    @BeforeClass
+//    @BeforeClass
     public static void loadContent() {
         File file1 = new File(resource1);
         content1 = new StringBuilder();
@@ -108,14 +108,14 @@ public class TestClass4 {
 
     @Test
     public void testA(){
-        int code = Application.bulkRequest(6, content1.toString(), sandboxId, "employees50k");
+        int code = Application.bulkRequest(6, emp50k.toString(), sandboxId, "employees50k");
 //        System.out.println(code);
         assertEquals(200, code);
     }
 
     @Test
     public void testB(){
-        int code = Application.bulkRequest(6, content2.toString(), sandboxId, "employees100k");
+        int code = Application.bulkRequest(6, emp100k.toString(), sandboxId, "employees100k");
 //        System.out.println(code);
         assertEquals(200, code);
     }
@@ -127,7 +127,7 @@ public class TestClass4 {
         String queryPayload = "{\n  \"track_total_hits\": true, \"query\":\n  {\n    \"match\": {\"MaritalStatus\": \"Married\"}\n  }\n}";
         int val = Application.searchIndex(index, queryPayload, sandboxId);
 //        System.out.println("1: " + val);
-        assertEquals(1029, val);
+        assertEquals(75054, val);
     }
 
     @Test
@@ -158,6 +158,6 @@ public class TestClass4 {
         String queryPayload = "{\n  \"track_total_hits\": true, \"query\":\n  {\n    \"match\": {\"MaritalStatus\": \"Married\"}\n  }\n}";
         int val = Application.searchIndex(index, queryPayload, sandboxId);
 //        System.out.println("1: " + val);
-        assertEquals(107, val);
+        assertEquals(36084, val);
     }
 }

@@ -18,10 +18,10 @@ import static org.junit.Assert.assertTrue;
 public class TestRunnerUpdateByQuery {
     static StringBuilder emp50k;
     static StringBuilder emp100k;
-    private static String resource1 = "data/emp50.json";
-    private static String resource2 = "data/emp100.json";
+    private static String resource1 = "data/Employees50K.json";
+    private static String resource2 = "data/Employees100K.json";
 
-//    @BeforeClass
+    @BeforeClass
     public static void loadContent() {
         File file1 = new File(resource1);
         emp50k = new StringBuilder();
@@ -48,7 +48,7 @@ public class TestRunnerUpdateByQuery {
     public void test(){
         Class[] cls = {TestClass1.class, TestClass2.class, TestClass3.class, TestClass4.class, TestClass5.class};
 
-        Result result = JUnitCore.runClasses(new ParallelComputer(true, false), cls);
+        Result result = JUnitCore.runClasses(new ParallelComputer(false, false), cls);
         if(!result.wasSuccessful()){
             System.out.println("Tests Failed: " + result.getFailureCount());
             List<Failure> failures = result.getFailures();

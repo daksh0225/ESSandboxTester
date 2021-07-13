@@ -24,4 +24,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    minHeapSize("512m")
+    maxHeapSize("4g")
 }
