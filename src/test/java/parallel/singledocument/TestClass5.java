@@ -77,7 +77,7 @@ public class TestClass5 {
     }
     @Test
     public void testDocumentPostRequest(){
-        String url = "http://localhost:9200/daksh0225/_doc";
+        String url = "http://localhost:9200/daksh0225/_doc?refresh";
         String payload = "{\"type\": \"table\", \"company\": \"woodtech5\"}";
         int code = Application.putDocument(1, url, payload, "POST", this.sandboxId);
         System.out.println("5: " + code);

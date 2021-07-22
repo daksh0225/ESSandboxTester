@@ -40,7 +40,7 @@ public class TestClass2 {
     }
     @Test
     public void testDocumentPostRequest(){
-        String url = "http://localhost:9200/daksh0225/_doc";
+        String url = "http://localhost:9200/daksh0225/_doc?refresh";
         String payload = "{\"type\": \"table\", \"company\": \"woodtech2\"}";
         int code = Application.putDocument(1, url, payload, "POST", null);
         System.out.println("2: " + code);
