@@ -16,7 +16,7 @@ public class TestRunnerBulk {
     public void test(){
         Class[] cls = {TestClass1.class, TestClass2.class, TestClass3.class, TestClass4.class, TestClass5.class};
 
-        Result result = JUnitCore.runClasses(new ParallelComputer(true, false), cls);
+        Result result = JUnitCore.runClasses(new ParallelComputer(false, false), cls);
         if(!result.wasSuccessful()){
             System.out.println("Tests Failed: " + result.getFailureCount());
             List<Failure> failures = result.getFailures();
